@@ -1,0 +1,48 @@
+div.Countdown {
+  color: #8d6e63;
+  font-size: 4rem;
+  font-weight: bold;
+  justify-content: center;
+  display: flex;
+}
+
+div.TimersControls {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin: 20px 0px;
+}
+
+div.preset-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+button.preset-button {
+  background-color: #d7ccc8;
+}
+
+div.timer-control-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+div.CustomTime {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #5d4037;
+  font-weight: 600;
+}
+
+input.customTimeInput[type="number"] {
+  width: 100px;
+  border-radius: 5px;
+  border: 1px solid #bcaaa4;
+  font-size: 1rem;
+  text-align: center;
+  color: #8d6e63;
+}
