@@ -27,7 +27,26 @@ const SoundToggle = () => {
         loop
       />
       <button
-        onClick={() => setIsSoundOn((prev) => !prev)}
+        onClick={async () => {
+          setIsSoundOn((prev) => {
+            const newState = !prev;
+            return newState;
+          });
+          if (audioRef.current) {
+            if (!isSoundOn) {
+              // Turning sound ON, try to play
+              try {
+                await audioRef.current.play();
+              } catch (e) {
+                // Handle play() promise rejection
+                console.error("Audio play failed:", e);
+              }
+            } else {
+              // Turning sound OFF, pause
+              audioRef.current.pause();
+            }
+          }
+        }}
         className="SoundBtn"
       >
         {isSoundOn ? "🔊 Sound On" : "🔇 Sound Off"}
